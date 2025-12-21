@@ -11,7 +11,7 @@ export const menuArray = [
     category: "burgers",
     id: 0,
     price: 12,
-    image: "Images/Classic-cheeseburger.png",
+    image: "Images/Classic-hamburger.png",
   },
   {
     name: "Double Smash",
@@ -69,7 +69,7 @@ export const menuArray = [
     ingredients: ["Vanilla ice cream", "milk"],
     category: "desserts",
     price: 8,
-    image: "Images/Vanilla-shake.png",
+    image: "Images/Vanilla-milkshake.png",
     id: 6,
   },
   {
@@ -77,7 +77,7 @@ export const menuArray = [
     ingredients: ["Chocolate ice cream", "milk"],
     category: "desserts",
     price: 8,
-    image: "Images/Chocolate-shake.png",
+    image: "Images/Chocolate-milkshake.png",
     id: 7,
   },
 ];
