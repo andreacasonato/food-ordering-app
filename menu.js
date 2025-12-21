@@ -8,9 +8,10 @@ export const menuArray = [
       "tomato",
       "house sauce",
     ],
+    category: "burgers",
     id: 0,
     price: 12,
-    image: "Images/Classic-hamburger.png",
+    image: "Images/Classic-cheeseburger.png",
   },
   {
     name: "Double Smash",
@@ -20,6 +21,7 @@ export const menuArray = [
       "pickles",
       "grilled onions",
     ],
+    category: "burgers",
     price: 15,
     image: "Images/Double-smash.png",
     id: 1,
@@ -33,6 +35,7 @@ export const menuArray = [
       "caramelized onions",
       "BBQ sauce",
     ],
+    category: "burgers",
     price: 14,
     image: "Images/Jimmys-original.png",
     id: 2,
@@ -40,6 +43,7 @@ export const menuArray = [
   {
     name: "Fries",
     ingredients: ["Crispy fries", "sea salt"],
+    category: "sides",
     price: 5,
     image: "Images/Fries.png",
     id: 3,
@@ -47,6 +51,7 @@ export const menuArray = [
   {
     name: "Onion Rings",
     ingredients: ["Beer-battered onion rings"],
+    category: "sides",
     price: 5,
     image: "Images/Onion-rings.png",
     id: 4,
@@ -54,6 +59,7 @@ export const menuArray = [
   {
     name: "Chicken Bites",
     ingredients: ["Breaded chicken", "classic seasoning"],
+    category: "sides",
     price: 5,
     image: "Images/Chicken-bites.png",
     id: 5,
@@ -61,15 +67,17 @@ export const menuArray = [
   {
     name: "Vanilla Milkshake",
     ingredients: ["Vanilla ice cream", "milk"],
+    category: "desserts",
     price: 8,
-    image: "Images/Vanilla-milkshake.png",
+    image: "Images/Vanilla-shake.png",
     id: 6,
   },
   {
     name: "Chocolate Milkshake",
     ingredients: ["Chocolate ice cream", "milk"],
+    category: "desserts",
     price: 8,
-    image: "Images/Chocolate-milkshake.png",
+    image: "Images/Chocolate-shake.png",
     id: 7,
   },
 ];
