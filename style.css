@@ -63,7 +63,9 @@ a {
 }
 
 .section-menu {
-  padding: 40px;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 .section-menu h2 {
@@ -77,9 +79,12 @@ a {
 /* ----- MENU ITEMS ----- */
 .menu-item {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem 2rem;
+  /*padding: 1.5rem 2rem;*/
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
