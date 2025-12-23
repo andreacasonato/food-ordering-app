@@ -82,7 +82,6 @@ a {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  /*padding: 1.5rem 2rem;*/
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   border-bottom: 1px solid #e5e5e5;
@@ -141,4 +140,130 @@ a {
   background: #ffedb7;
   transform: scale(1.05);
   border-color: #ffb839;
+}
+
+/* ----- CART SECTION ----- */
+.cart-section {
+  padding: 32px;
+  background-color: #fefefe;
+  margin-top: 1.25rem;
+}
+
+.cart-title {
+  font-family: Jost, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #292929;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-family: Jost, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+.cart-item-quantity {
+  font-family: Jost, sans-serif;
+  font-size: 0.875rem;
+  color: #6d6d6d;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: Jost, sans-serif;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.remove-btn:hover {
+  color: #e01a32;
+}
+
+.cart-item-price {
+  font-family: Jost, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+/* Cart Total */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid #292929;
+  margin-top: 1rem;
+}
+
+.cart-total-label {
+  font-family: Jost, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+.cart-total-price {
+  font-family: Jost, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #292929;
+}
+
+/* Complete Order Button */
+.complete-order-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #16db65;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: Jost, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.complete-order-btn:hover {
+  background: #12c759;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
 }
