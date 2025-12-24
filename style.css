@@ -193,27 +193,6 @@ a {
   color: #292929;
 }
 
-.cart-item-quantity {
-  font-family: Jost, sans-serif;
-  font-size: 0.875rem;
-  color: #6d6d6d;
-}
-
-.remove-btn {
-  background: none;
-  color: #999;
-  cursor: pointer;
-  font-family: Jost, sans-serif;
-  font-size: 0.875rem;
-  padding: 0.25rem 0.5rem;
-  border: 0.5px solid #262626;
-}
-
-.remove-btn:hover {
-  color: #e01a32;
-  border: 0.8px solid #e01a32;
-}
-
 .cart-item-price {
   font-family: Jost, sans-serif;
   font-size: 1rem;
@@ -268,6 +247,54 @@ a {
 /* Utility */
 .hidden {
   display: none !important;
+}
+
+/* ----- QUANTITY CONTROLS ----- */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-btn {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-family: Jost, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #292929;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:hover {
+  background: #ffedb7;
+  border-color: #ffb839;
+}
+
+.decrease-btn {
+  color: #e01a32;
+}
+
+.decrease-btn:hover {
+  background: #ffe5e5;
+  border-color: #e01a32;
+}
+
+.quantity-display {
+  font-family: Jost, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #292929;
+  min-width: 20px;
+  text-align: center;
 }
 
 /* ===== Notification alert ===== */

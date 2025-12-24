@@ -105,6 +105,33 @@ function calculateTotal() {
   }, 0);
 }
 
+// Increase quantity
+function increaseQuantity(itemId) {
+  const cartItem = cart.find((item) => item.id === itemId);
+  if (cartItem) {
+    cartItem.quantity++;
+    renderCart();
+    showNotification("✅ Quantity increased!");
+  }
+}
+
+// Decrease quantity (or remove if quantity is 1)
+function decreaseQuantity(itemId) {
+  const cartItem = cart.find((item) => item.id === itemId);
+  if (cartItem) {
+    if (cartItem.quantity === 1) {
+      // Remove item completely
+      removeFromCart(itemId);
+      showNotification("🗑️ Item removed from cart");
+    } else {
+      // Decrease quantity
+      cartItem.quantity--;
+      renderCart();
+      showNotification("➖ Quantity decreased");
+    }
+  }
+}
+
 // Render cart
 function renderCart() {
   // If cart is empty, hide the cart section
@@ -126,8 +153,15 @@ function renderCart() {
       <img src="${item.image}" alt="${item.name}" class="cart-item-image">
       <div class="cart-item-details">
         <span class="cart-item-name">${item.name}</span>
-        <span class="cart-item-quantity">Quantity: ${item.quantity}</span>
-        <button class="remove-btn" data-remove="${item.id}">remove</button>
+        <div class="quantity-controls">
+          <button class="quantity-btn decrease-btn" data-decrease="${item.id}">
+            −
+          </button>
+          <span class="quantity-display">${item.quantity}</span>
+          <button class="quantity-btn increase-btn" data-increase="${
+            item.id
+          }">+</button>
+        </div>
       </div>
     </div>
     <span class="cart-item-price">$${(item.price * item.quantity).toFixed(
@@ -162,17 +196,23 @@ document.addEventListener("click", (e) => {
     addToCart(itemId);
   }
 
-  // Handle "remove" button clicks
-  if (e.target.classList.contains("remove-btn")) {
-    const itemId = Number(e.target.dataset.remove);
-    removeFromCart(itemId);
+  // Handle "increase quantity" button clicks
+  if (e.target.classList.contains("increase-btn")) {
+    const itemId = Number(e.target.dataset.increase);
+    increaseQuantity(itemId);
+  }
+
+  // Handle "decrease quantity" button clicks
+  if (e.target.classList.contains("decrease-btn")) {
+    const itemId = Number(e.target.dataset.decrease);
+    decreaseQuantity(itemId);
   }
 
   // Handle "complete order" button click
   if (e.target.id === "complete-order-btn") {
     console.log("Complete order clicked!");
 
-    // modal
+    // Modal
   }
 });
 
