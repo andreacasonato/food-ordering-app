@@ -210,9 +210,12 @@ document.addEventListener("click", (e) => {
 
   // Handle "complete order" button click
   if (e.target.id === "complete-order-btn") {
-    console.log("Complete order clicked!");
+    showModal();
+  }
 
-    // Modal
+  // Handle modal background click (close modal)
+  if (e.target.id === "payment-modal") {
+    hideModal(); // 👈 ADD THIS
   }
 });
 
@@ -230,6 +233,61 @@ function showNotification(message) {
     setTimeout(() => notification.remove(), 300);
   }, 1800);
 }
+
+// ========== MODAL ==========
+const modal = document.getElementById("payment-modal");
+const payBtn = document.getElementById("pay-btn");
+const nameInput = document.getElementById("name-input");
+const cardInput = document.getElementById("card-input");
+const cvvInput = document.getElementById("cvv-input");
+const paymentForm = document.getElementById("payment-form");
+
+// Show modal
+function showModal() {
+  modal.classList.remove("hidden");
+  // Update pay button with total
+  const total = calculateTotal();
+  payBtn.textContent = `Pay $${total.toFixed(2)}`;
+}
+
+// Hide modal
+function hideModal() {
+  modal.classList.add("hidden");
+  // Clear form
+  paymentForm.reset();
+}
+
+// Handle payment form submission
+paymentForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent page reload
+
+  const name = nameInput.value.trim();
+  const cardNumber = cardInput.value.trim();
+  const cvv = cvvInput.value.trim();
+
+  // Validation
+  if (!name || !cardNumber || !cvv) {
+    showNotification("❌ Please fill in all fields");
+    return;
+  }
+
+  if (cardNumber.length !== 16) {
+    showNotification("❌ Card number must be 16 digits");
+    return;
+  }
+
+  if (cvv.length !== 3) {
+    showNotification("❌ CVV must be 3 digits");
+    return;
+  }
+
+  // Payment successful
+  hideModal();
+  showNotification("✅ Payment successful!");
+
+  // Add order confirmation screen in next phase
+  console.log("Payment completed for:", name);
+});
 
 // ===== INITIALIZE APP =====
 function initialize() {
