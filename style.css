@@ -438,3 +438,11 @@ a {
 .pay-btn:hover {
   background: #12c759;
 }
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (max-width: 620px) {
+  .food-ordering-container {
+    margin: 0 auto;
+  }
+}
