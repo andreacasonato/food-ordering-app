@@ -439,6 +439,158 @@ a {
   background: #12c759;
 }
 
+/* ----- ORDER CONFIRMATION ----- */
+.order-confirmation {
+  padding: 2rem;
+  text-align: center;
+}
+
+.confirmation-message {
+  background: linear-gradient(135deg, #d4f4dd 0%, #c8f3d8 100%);
+  border: 1px solid #16db65;
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.confirmation-message h2 {
+  font-family: Graduate, sans-serif;
+  font-size: 1.75rem;
+  color: #16db65;
+  margin-bottom: 1rem;
+}
+
+.confirmation-message p {
+  font-family: Jost, sans-serif;
+  font-size: 1.125rem;
+  color: #292929;
+  line-height: 1.6;
+}
+
+.tracking-link {
+  color: #16db65;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tracking-link:hover {
+  color: #12c759;
+}
+
+.order-summary-box {
+  background: #fff;
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.order-summary-box h3 {
+  font-family: Jost, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #292929;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.summary-item-details {
+  flex: 1;
+  text-align: left;
+}
+
+.summary-item-name {
+  font-family: Jost, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+.summary-item-qty {
+  font-family: Jost, sans-serif;
+  font-size: 0.875rem;
+  color: #6d6d6d;
+}
+
+.summary-item-price {
+  font-family: Jost, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  margin-top: 1rem;
+  border-top: 1px solid #292929;
+}
+
+.summary-total-label {
+  font-family: Jost, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #292929;
+}
+
+.summary-total-price {
+  font-family: Jost, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #16db65;
+}
+
+.new-order-btn {
+  padding: 0.8rem 1.8rem;
+  background: #ffb839;
+  color: #292929;
+  border: none;
+  border-radius: 4px;
+  font-family: Jost, sans-serif;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.new-order-btn:hover {
+  background: #ffa726;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 184, 57, 0.4);
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (max-width: 620px) {

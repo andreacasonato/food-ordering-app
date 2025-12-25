@@ -285,9 +285,90 @@ paymentForm.addEventListener("submit", (e) => {
   hideModal();
   showNotification("✅ Payment successful!");
 
-  // Add order confirmation screen in next phase
-  console.log("Payment completed for:", name);
+  // Show order confirmation
+  showOrderConfirmation(name);
 });
+
+// ===== ORDER CONFIRMATION =====
+const orderConfirmation = document.getElementById("order-confirmation");
+
+// Show order confirmation
+function showOrderConfirmation(customerName) {
+  // Hide header, menu, cart
+  document.querySelector("header").classList.add("hidden");
+  menuContainer.classList.add("hidden");
+  cartSection.classList.add("hidden");
+
+  // Show confirmation section
+  orderConfirmation.classList.remove("hidden");
+
+  // Calculate total
+  const total = calculateTotal();
+
+  // Generate order summary items HTML
+  const summaryItemsHTML = cart
+    .map(
+      (item) => `
+    <div class="summary-item">
+      <img src="${item.image}" alt="${item.name}" class="summary-item-image">
+      <div class="summary-item-details">
+        <div class="summary-item-name">${item.name}</div>
+        <div class="summary-item-qty">Quantity: ${item.quantity}</div>
+      </div>
+      <div class="summary-item-price">$${(item.price * item.quantity).toFixed(
+        2
+      )}</div>
+    </div>
+  `
+    )
+    .join("");
+
+  // Build confirmation html
+  orderConfirmation.innerHTML = `
+    <div class="confirmation-message">
+      <h2>Thank you ${customerName}, your order is on its way!</h2>
+      <p>Follow this <span class="tracking-link">LINK</span> for tracking</p>
+    </div>
+    
+    <div class="order-summary-box">
+      <h3>Order summary</h3>
+      ${summaryItemsHTML}
+      <div class="summary-total">
+        <span class="summary-total-label">Total price:</span>
+        <span class="summary-total-price">$${total.toFixed(2)}</span>
+      </div>
+    </div>
+    
+    <button class="new-order-btn" id="new-order-btn">
+      Start new order
+    </button>
+  `;
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Reset app for new order
+function resetApp() {
+  // Clear cart
+  cart = [];
+
+  // Hide confirmation
+  orderConfirmation.classList.add("hidden");
+
+  // Show header, menu
+  document.querySelector("header").classList.remove("hidden");
+  menuContainer.classList.remove("hidden");
+
+  // Re-render menu and cart
+  renderMenu();
+  renderCart();
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  showNotification("🍔 Ready for a new order!");
+}
 
 // ===== INITIALIZE APP =====
 function initialize() {
