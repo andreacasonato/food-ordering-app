@@ -217,6 +217,11 @@ document.addEventListener("click", (e) => {
   if (e.target.id === "payment-modal") {
     hideModal(); // 👈 ADD THIS
   }
+
+  // Handle "start new order" button click
+  if (e.target.id === "new-order-btn") {
+    resetApp();
+  }
 });
 
 // ===== NOTIFICATION FUNCTION =====
@@ -367,7 +372,7 @@ function resetApp() {
   // Scroll to top
   window.scrollTo({ top: 0, behavior: "smooth" });
 
-  showNotification("🍔 Ready for a new order!");
+  showNotification("Ready for a new order!");
 }
 
 // ===== INITIALIZE APP =====
